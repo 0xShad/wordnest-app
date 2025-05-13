@@ -1,6 +1,4 @@
-import { getUniqueData } from "@/lib/getUniqueData";
-import Image from "next/image";
-
+import { HeroBlogCard } from "@/components/general/HeroBlogCard";
 
 export default function Home() {
   return (
@@ -17,22 +15,4 @@ export default function Home() {
       </div>
     </div>
   );
-}
-
-
-async function HeroBlogCard() {
-  const data = await getUniqueData();
-
-  if (!data) {
-    return <div>No data found</div>;
-  }
-
-  return (
-    <div className="w-full">
-      <h1 className="text-6xl font-bold tracking-tight mb-4">{data.title}</h1>
-      <div className="relative w-full h-[450px]">
-        <Image src={data.imageUrl} alt={data.title} fill className="object-cover rounded-sm"/>
-      </div>
-    </div>
-  )
 }

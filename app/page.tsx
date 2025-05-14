@@ -1,4 +1,6 @@
 import { HeroBlogCard } from "@/components/general/HeroBlogCard";
+import { RecentBlogCard } from "@/components/general/RecentBlogCard";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
   return (
@@ -7,10 +9,12 @@ export default function Home() {
         <HeroBlogCard />
 
         <div className="flex flex-col">
-          <h1>Recent Uploads</h1>
-          <div className="">Card1</div>
-          <div className="">Card2</div>
-          <div className="">Card3</div>
+          <h1 className="font-semibold text-lg">Recent Uploads</h1>
+          <Card>
+            <CardContent>
+              <RecentBlogCard />
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>

@@ -37,12 +37,7 @@ export default async function Navbar() {
             <div className="flex items-center gap-2">
               {user.picture && (
                 <div className="relative size-8">
-                  <Image
-                    src={user.picture}
-                    alt={user.given_name ?? "user profile"}
-                    fill
-                    className="rounded-full object-cover"
-                  />
+                  <img src={user.picture ?? ''} alt={user.given_name ?? 'User'} className="object-cover rounded-full"/>
                 </div>
               )}
               <p className=" font-semibold text-md">{user.given_name}</p>

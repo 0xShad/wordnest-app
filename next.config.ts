@@ -32,6 +32,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "www.gravatar.com",
         port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "images.squarespace-cdn.com",
+        port: "",
       }
     ],
   },

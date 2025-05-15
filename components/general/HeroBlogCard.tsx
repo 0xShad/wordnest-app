@@ -13,11 +13,13 @@ export async function HeroBlogCard() {
   }
 
   return (
-    <div className="w-full group shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden rounded-sm">
+    <div className="w-full group hover:shadow-lg transition-all duration-300 overflow-hidden rounded-sm">
       <h1 className="text-6xl font-bold tracking-tight mb-4">{data.title}</h1>
-      <div className="flex items-center gap-4 mb-2">
+      <div className="flex items-center gap-6 mb-2">
         <div className="flex items-center gap-2">
-          <p>image</p>
+          <div className="relative size-8">
+            <img src={data.authorImage} alt={data.authorName} className="rounded-full object-cover" />
+          </div>
           <p className="text-sm font-semibold text-gray-800">{data.authorName}</p>
         </div>
         <time className="text-sm text-gray-500">{new Intl.DateTimeFormat("en-US", {
@@ -39,7 +41,7 @@ export async function HeroBlogCard() {
       <Card className="rounded-sm">
         <CardContent className="flex flex-col gap-2">
           <p className="line-clamp-2 text-gray-700 text-md">{data.content}</p>
-          <Button className="bg-purple-500 self-end">Read more</Button>
+          <Button className="bg-purple-500 self-end cursor-pointer hover:bg-purple-700">Read more</Button>
         </CardContent>
       </Card>
     </div>

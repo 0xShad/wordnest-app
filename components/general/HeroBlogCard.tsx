@@ -35,12 +35,11 @@ export async function HeroBlogCard() {
           }).format(data.createdAt)}
         </time>
       </div>
-      <div className="relative w-full h-[450px] mb-2">
-        <Image
+      <div className="relative w-full  mb-2">
+        <img
           src={data.imageUrl}
           alt={data.title}
-          fill
-          className="object-cover rounded-sm"
+          className="object-cover w-full h-[400px]"
         />
       </div>
 

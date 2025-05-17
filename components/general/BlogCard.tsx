@@ -21,11 +21,10 @@ export default async function BlogCard({ data }: IappProps) {
     <Link href={`/post/${data.id}`} key={data.id}>
       <div>
         <div className="relative w-full h-[200px] mb-1">
-          <Image
+          <img
             src={data.imageUrl}
             alt={data.title}
-            fill
-            className="overflow-hidden object-cover rounded-sm"
+            className="rounded-sm object-cover h-[200px] w-full"
           />
         </div>
         <Card>

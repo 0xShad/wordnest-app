@@ -41,7 +41,7 @@ export default async function Post({ params }: { params: PostProps }) {
           <img
             src={data.imageUrl}
             alt={data.title}
-            className="rounded-sm object-cover"
+            className="rounded-sm object-cover w-full h-full"
           />
         </CardHeader>
         <CardContent>

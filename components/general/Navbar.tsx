@@ -91,15 +91,23 @@ export default function Navbar({ user }: UserProps) {
         </div>
 
         <div className="flex flex-col gap-6 mt-10">
-          <Link href="/" className="text-md font-medium hover:text-purple-500" onClick={toggleNavMenu}>
+          <Link
+            href="/"
+            className="text-md font-medium hover:text-purple-500"
+            onClick={toggleNavMenu}
+          >
             Home
           </Link>
-          <Link href="/dashboard" className="text-md font-medium hover:text-purple-500" onClick={toggleNavMenu}>
+          <Link
+            href="/dashboard"
+            className="text-md font-medium hover:text-purple-500"
+            onClick={toggleNavMenu}
+          >
             Dashboard
           </Link>
         </div>
-        { user ? (
-           <div className="flex flex-col mt-6 gap-6">
+        {user ? (
+          <div className="flex flex-col mt-6 gap-6">
             <div className="flex items-center gap-2">
               {user.picture && (
                 <div className="relative size-8">
@@ -125,9 +133,7 @@ export default function Navbar({ user }: UserProps) {
               Sign up
             </RegisterLink>
           </div>
-        )
-        }
-
+        )}
       </div>
     </nav>
   );

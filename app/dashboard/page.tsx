@@ -1,5 +1,5 @@
 import BlogCard from "@/components/general/BlogCard";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { getUserData } from "@/lib/getData";
 import Link from "next/link";
 

@@ -1,5 +1,4 @@
 import { getData } from "@/lib/getData";
-import { Card, CardContent } from "../ui/card";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
 import Link from "next/link";

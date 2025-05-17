@@ -12,7 +12,8 @@ export default function CreateWord() {
       <CardHeader>
          <CardTitle className="text-lg">Create a new word post.</CardTitle>
          <CardDescription>Create a word post and share it with the world.</CardDescription>
-         <CardContent>
+      </CardHeader>
+       <CardContent>
           <form className="flex flex-col gap-2" action={createPost}>
             <Label >Title</Label>
             <Input type="text" name="title" required/>
@@ -24,7 +25,6 @@ export default function CreateWord() {
             <SubmitButton />
           </form>
          </CardContent>
-      </CardHeader>
     </Card>
   )
 }

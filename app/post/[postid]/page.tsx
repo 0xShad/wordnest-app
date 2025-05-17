@@ -45,7 +45,9 @@ export default async function Post({ params }: { params: PostProps }) {
           />
         </CardHeader>
         <CardContent>
-          <p className="text-gray-700">{data.content}</p>
+          <div className="whitespace-pre-wrap">
+            <p className="text-gray-700">{data.content}</p>
+          </div>
         </CardContent>
       </Card>
     </div>

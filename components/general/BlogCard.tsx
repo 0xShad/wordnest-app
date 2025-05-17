@@ -2,7 +2,6 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import Link from "next/link";
 
-
 interface IappProps {
   data: {
     id: string;
@@ -17,40 +16,45 @@ interface IappProps {
   };
 }
 
-export default async function BlogCard({data} : IappProps) {
-
+export default async function BlogCard({ data }: IappProps) {
   return (
-    <Link href={`/post/${data.id}`}  key={data.id}>
-        <div>
-          <div className="relative w-full h-[200px] mb-1">
-            <Image
-              src={data.imageUrl}
-              alt={data.title}
-              fill
-              className="overflow-hidden object-cover rounded-sm"
-            />
-          </div>
-          <Card>
-            <CardContent>
-              <div className="flex flex-col gap-2">
-                <p className="line-clamp-2 text-gray-700">{data.content}</p>
-                <div className="flex items-center justify-between mt-4">
-                    <div className="flex items-center gap-2">
-                        <p className="text-sm">Image</p>
-                        <h3 className="text-sm font-medium text-gray-600">{data.authorName}</h3>
-                    </div>
-                    <time className="text-sm text-gray-500">
-                        {new Intl.DateTimeFormat("en-US", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric"
-                        }).format(data.createdAt)}
-                    </time>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+    <Link href={`/post/${data.id}`} key={data.id}>
+      <div>
+        <div className="relative w-full h-[200px] mb-1">
+          <Image
+            src={data.imageUrl}
+            alt={data.title}
+            fill
+            className="overflow-hidden object-cover rounded-sm"
+          />
         </div>
-        </Link>
+        <Card>
+          <CardContent>
+            <div className="flex flex-col gap-2">
+              <p className="line-clamp-2 text-gray-700">{data.content}</p>
+              <div className="flex items-center justify-between mt-4">
+                <div className="flex items-center gap-2">
+                  <img
+                    src={data.authorImage}
+                    alt={data.authorName}
+                    className="rounded-full size-8"
+                  />
+                  <h3 className="text-sm font-medium text-gray-600">
+                    {data.authorName}
+                  </h3>
+                </div>
+                <time className="text-sm text-gray-500">
+                  {new Intl.DateTimeFormat("en-US", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  }).format(data.createdAt)}
+                </time>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </Link>
   );
 }

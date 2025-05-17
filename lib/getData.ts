@@ -1,5 +1,6 @@
 import { prisma } from "@/app/utils/db";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { notFound } from "next/navigation";
 
 
 export async function getData() {
@@ -14,6 +15,9 @@ export async function getData() {
             authorImage: true,
             createdAt: true,
             updatedAt: true,
+        },
+        orderBy: {
+            createdAt: "desc"
         }
     })
 
@@ -30,6 +34,20 @@ export async function getUserData() {
             authorId: user?.id
         }
     })
+
+    return data
+}
+
+export async function getPostData(postId: string) {
+    const data = await prisma.blogPost.findUnique({
+        where: {
+            id: postId
+        }
+    })
+
+    if (!data) {
+        notFound()
+    }
 
     return data
 }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader } from "../ui/card";
+import Link from "next/link";
 
 
 interface IappProps {
@@ -19,7 +20,8 @@ interface IappProps {
 export default async function BlogCard({data} : IappProps) {
 
   return (
-        <div key={data.id}>
+    <Link href={`/post/${data.id}`}  key={data.id}>
+        <div>
           <div className="relative w-full h-[200px] mb-1">
             <Image
               src={data.imageUrl}
@@ -49,5 +51,6 @@ export default async function BlogCard({data} : IappProps) {
             </CardContent>
           </Card>
         </div>
+        </Link>
   );
 }

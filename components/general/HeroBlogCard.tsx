@@ -2,6 +2,7 @@ import { getUniqueData } from "@/lib/getUniqueData";
 import { Card, CardContent } from "../ui/card";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 
 
@@ -41,7 +42,7 @@ export async function HeroBlogCard() {
       <Card className="rounded-sm">
         <CardContent className="flex flex-col gap-2">
           <p className="line-clamp-2 text-gray-700 text-md">{data.content}</p>
-          <Button className="bg-purple-500 self-end cursor-pointer hover:bg-purple-700">Read more</Button>
+          <Button className="w-auto bg-purple-500 self-end cursor-pointer hover:bg-purple-700"><Link href={`/post/${data.id}`}>Read more</Link></Button>
         </CardContent>
       </Card>
     </div>

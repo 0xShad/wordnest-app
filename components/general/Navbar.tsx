@@ -69,7 +69,7 @@ export default function Navbar({ user }: UserProps) {
               Login
             </LoginLink>
             <RegisterLink className={buttonVariants({ variant: "secondary" })}>
-              Sign up
+              Sign up``
             </RegisterLink>
           </>
         )}
